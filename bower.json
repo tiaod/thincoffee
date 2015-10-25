@@ -1,0 +1,24 @@
+{
+  "name": "thincoffee",
+  "homepage": "https://github.com/tiaod/thincoffee",
+  "authors": [
+    "tiaod <tiaod@qq.com>"
+  ],
+  "description": "A very ease and lightweight javascript framework.",
+  "main": "dist/thinkcoffee.js",
+  "moduleType": [],
+  "keywords": [
+    "coffeescript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
