@@ -5,7 +5,7 @@
     "tiaod <tiaod@qq.com>"
   ],
   "description": "A very ease and lightweight javascript framework.",
-  "main": "dist/thinkcoffee.js",
+  "main": "dist/thincoffee.js",
   "moduleType": [],
   "keywords": [
     "coffeescript"
