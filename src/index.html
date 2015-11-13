@@ -23,8 +23,113 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <h1>helloworld</h1>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <!-- <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <!-- <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>thincoffee</h1>
+
+          <h2>数字输入插件</h2>
+          <input type="number" pattern="[0-9]*" min="0" value="1" thin-validate>
+
+          <h2>多选插件</h2>
+          <select class="Multiselect" multiple="multiple" id="selplace01">
+            <option value="cheese">美国东部</option>
+            <option value="tomatoes">美国西部</option>
+            <option value="mozarella">美国南部</option>
+            <option value="mushrooms">美国北部</option>
+            <option value="pepperoni">Pepperoni</option>
+            <option value="onions">Onions</option>
+          </select>
+
+          <h2>时间日期输入</h2>
+          <input type="text" class="form-control TransparentInput Datetimepicker" placeholder="请输入出行日期..">
+          <br>
+          还可以设置出发日期与返回日期锁定：
+          <!-- 出发日期输入 begin -->
+          <div class="row">
+            <div class="col-xs-4">
+              <label class="FormLabel">
+                <i class="glyphicon glyphicon-calendar"></i> 出发日期
+              </label>
+            </div>
+            <div class="col-xs-8">
+              <input type="text" class="form-control TransparentInput Datetimepicker" placeholder="请输入出行日期.." id="departureDate01">
+            </div>
+          </div>
+          <hr />
+          <!-- 出发日期输入 end -->
+
+          <!-- 返回日期输入 begin -->
+          <div class="row">
+            <div class="col-xs-4">
+              <label class="FormLabel">
+                <i class="glyphicon glyphicon-calendar"></i> 返回日期
+              </label>
+            </div>
+            <div class="col-xs-8">
+              <input type="text" class="form-control TransparentInput Datetimepicker" placeholder="请输入返回日期.." id="returnDate01" />
+            </div>
+          </div>
+          <hr />
+          <!-- 返回日期输入 end -->
+
+          <h2>开关选择</h2>
+          <input type="checkbox" class="form-control TransparentInput Toggle" id="toggle2" />
+          <br><br>
+
+          <h2>横向列表选择</h2>
+          <ul class="HorizontalScroll ListSelect" id="carSelect">
+            <li>
+              <img src="/assets/images/jingji.png" alt="" class="img-responsive" />
+              <p>经济型
+                <br />200元/天</p>
+            </li>
+            <li>
+              <img src="/assets/images/haohua.png" alt="" class="img-responsive" />
+              <p>豪华型
+                <br />300元/天</p>
+            </li>
+            <li selected>
+              <img src="/assets/images/suv.png" alt="" class="img-responsive" />
+              <p>SUV
+                <br />350元/天</p>
+            </li>
+            <li>
+              <img src="/assets/images/shangwu.png" alt="" class="img-responsive" />
+              <p>商务型
+                <br />600元/天</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <h1>图片多选框</h1>
+    <select class="image-picker masonry show-html" multiple="multiple">
+      <option data-img-label="<b>爬山</b>" data-img-src="assets/images/angular.png" value="11"> Page 1 </option>
+      <option data-img-label="游泳" data-img-src="assets/images/angular.png" value="23"> Page 3 </option>
+      <option data-img-label="跳楼" data-img-src="assets/images/angular.png" value="32"> Page 2 </option>
+      <option data-img-label="上网fdsa" data-img-src="assets/images/angular.png" value="44"> Page 4 </option>
+      <option data-img-label="打酱油" data-img-src="assets/images/angular.png" value="55"> Page 5 </option>
+      <option data-img-label="学习" data-img-src="assets/images/angular.png" value="66"> Page 6 </option>
+      <option data-img-label="Awwfadsw" data-img-src="assets/images/angular.png" value="77"> Page 7 </option>
+      <option data-img-label="Awww" data-img-src="assets/images/angular.png" value="88"> Page 8 </option>
+      <option data-img-label="Awww" data-img-src="assets/images/angular.png" value="99"> Page 9 </option>
+      <option data-img-label="Awww" data-img-src="assets/images/gulp.png" value="1010"> Page 10 </option>
+      <option data-img-label="Awww" data-img-src="assets/images/gulp.png" value="1011"> Page 11 </option>
+      <option data-img-label="Awww" data-img-src="assets/images/gulp.png" value="1012"> Page 12 </option>
+    </select>
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
     <!-- run `gulp inject` to automatically populate bower script dependencies -->
@@ -40,25 +145,39 @@
     <!-- angular templates will be automatically converted in js and inserted here -->
     <!-- endinject -->
     <!-- endbuild -->
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-    thin.define("A", [], function() {
-    return "a";
-});
+    thin.use("$carousel").initBanner("#MainBanner");
+    $formstone = thin.use("$formstone"); //引入美化框架
+    $formstone.init(); //可美化各种多选框
+    $multiselect = thin.use("$multiselect"); // 多项选择
+    // $validate=thin.use("$validate");
+    // $validate.validate("[thin-validate]");
+    $listSelect = thin.use("$listSelect"); // 列表选择（点击后会有蓝色的框框）
+    $listSelect.init(); // 进行初始化
+    $datetimepicker = thin.use("$datetimepicker") //时间选择模块
+    $datetimepicker.init('.Datetimepicker', { // 初始化日期选择
+      locale: 'zh-cn',
+      format: 'YYYY/MM/DD',
+      minDate: new Date()
+    });
+    $datetimepicker.lock('#departureDate01', '#returnDate01'); // 设置出发日期和返回日期锁定
+    $datetimepicker.init('.TimePicker', { // 初始化时间选择
+      locale: 'zh-cn',
+      format: 'HH:mm'
+    });
 
-thin.define("B", [], function() {
-    return "b";
-});
-
-thin.define("C", [], function() {
-    return "c";
-});
-
-thin.define("D", ["A", "B", "C"], function(B, A, C) {
-    return B + A + C;
-});
-
-var D = thin.use("D");
-alert(D);
+    // $multiselect.init('select.Multiselect.HotelType', "请选择房型...", "") // 传入参数后进行初始化。可以高度自定义。
+    // $multiselect.init('select.Multiselect.BedType', "请选择床...", "")
+    // $multiselect.init('select.Multiselect.GuideType', "你想要的导游类型...", "种类型") // 传入参数后进行初始化。可以高度自定义。
+    $multiselect.init('.Multiselect', "请选择你想去的地方...", "个地点", {
+      enableFiltering: true
+    });
+    $imagepicker = thin.use("$imagepicker"); //图片多选（内含自适应布局）
+    $imagepicker.init(); //初始化图片多选
+    $validate=thin.use("$validate");
+    $validate.validate("[thin-validate]");
     </script>
   </body>
 </html>

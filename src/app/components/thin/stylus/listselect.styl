@@ -1,0 +1,19 @@
+ul.HorizontalScroll
+  //横向滚动条
+  padding 10px
+  padding-left 10px //覆盖默认ul的padding-left 40px
+  white-space nowrap
+  overflow-x scroll
+  text-align center
+  li
+    display: inline-block
+    padding 10px
+
+ul.ListSelect
+  li
+    border 1px solid transparent
+  //横向滚动条
+  li[selected]
+    border 1px solid $theme-color
+    border-radius 10px
+    padding-bottom 0px

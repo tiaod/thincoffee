@@ -1,0 +1,38 @@
+.thumbnail
+  //动画渐变的效果。
+  transition all 0.2s ease-in-out 0s
+
+ul.thumbnails.image_picker_selector
+  overflow hidden
+  .thumbnail
+    margin-bottom 0px
+    border: 1px solid transparent
+  p
+    margin-left 20px
+    font-size: 14px
+    margin-top: -43px
+    text-shadow: 2px 2px 2px black
+    color: white
+    line-height 33px
+  i
+    font-size 24px
+    display none
+  .selected i
+    display inline
+  & > li
+    padding 5px
+    margin 0px !important
+    @media (max-width 758px)
+      width 33% //分三列显示
+
+    @media (max-width 400px)
+      width 50% //分两列显示
+
+    @media (max-width 270px)
+      width 95% //单列显示
+  .image_picker_image
+    // @extend .img-responsive
+    max-width 100%
+    // height auto
+  li .thumbnail.selected
+    background-color $theme-color

@@ -1,0 +1,34 @@
+
+.fs-number-element
+  //修复数字输入的高度问题
+  height 30px
+  color $theme-color
+  text-align center
+.fs-number
+  //删除底部的边距
+  margin 0px
+
+.fs-number-arrow
+  z-index 0
+  background none
+  height 30px //写死。因为和validate插件冲突
+  text-indent 0
+  font-size 18px
+  color #999
+  font-weight bold
+  position: absolute
+  top: 0
+  // width 30px
+  &:after
+    content none
+  &.fs-number-up
+    &:before
+      padding-right 20px
+      content "+"
+  &.fs-number-down
+    // 回复上边界的显示
+    left 0px
+    border-top 1px solid #ccc
+    &:before
+      padding-right 20px
+      content "-"
